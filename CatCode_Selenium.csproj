@@ -531,6 +531,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="appconfig.json" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -571,54 +573,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CloudinaryDotNet">
-      <Version>1.22.0</Version>
-    </PackageReference>
-    <PackageReference Include="Google.Apis.Drive.v3">
-      <Version>1.60.0.2986</Version>
-    </PackageReference>
-    <PackageReference Include="Google.Cloud.TextToSpeech.V1">
-      <Version>3.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="Grpc.Core">
-      <Version>2.46.6</Version>
-    </PackageReference>
-    <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.46</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.ML.OnnxRuntime">
-      <Version>1.13.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Toolkit">
-      <Version>7.1.2</Version>
-    </PackageReference>
-    <PackageReference Include="NAudio">
-      <Version>2.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Selenium.Support">
-      <Version>4.8.0</Version>
-    </PackageReference>
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver">
-      <Version>114.0.5735.9000</Version>
-    </PackageReference>
-    <PackageReference Include="Selenium.WebDriver.UndetectedChromeDriver">
-      <Version>2.3.0</Version>
-    </PackageReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets'))" />
-    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.114.0.5735.9000\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.114.0.5735.9000\build\Selenium.WebDriver.ChromeDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.1\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.1\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
-  </Target>
   <Import Project="..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.8.0\build\Selenium.WebDriver.targets')" />
   <Import Project="..\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.Managed.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets')" />
   <Import Project="..\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.1.13.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" />
