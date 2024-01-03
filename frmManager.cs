@@ -240,7 +240,7 @@ namespace CatCode_Selenium
                         {
                             uDriveTruyen.lblBaseURL.Text = "GG Drive Chương";
                         }));
-                        DataTable dtTruyen = Program.ExcecuteDataTable("select ID,ggd_id,title from tblTruyen where ggd_id != '' and daXuLy_ggd_id is null");
+                        DataTable dtTruyen = Program.ExcecuteDataTable("select ID, ggd_id, title, idLoaiTruyen from tblTruyen where ggd_id != '' and daXuLy_ggd_id is null");
                         foreach (DataRow dr in dtTruyen.Rows)
                         {
                             await uDriveTruyen.START_UGGDrive_Chuong(dr);

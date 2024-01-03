@@ -26,6 +26,7 @@ namespace CatCode_Selenium
         public string googleDriveApiKey { get; set; }
         
     }
+
     internal static class Program
     {
         private static string CONNECTION_STRING { get { return configuration.SQL_CONNECTION; } }
@@ -162,6 +163,7 @@ namespace CatCode_Selenium
                 return LoadDocument(urlRun, maxloop);
             }
         }
+
         static public DataTable ExcecuteDataTable(string queryString, Dictionary<string, object> dictParam = null)
         {
             DataTable dt = null;
@@ -196,6 +198,7 @@ namespace CatCode_Selenium
             }
             return dt;
         }
+
         static public void ExcecuteNoneQuery(string queryString, Dictionary<string, object> dictParam = null)
         {
             try
@@ -223,6 +226,7 @@ namespace CatCode_Selenium
                 throw;
             }
         }
+
         static public void MergeMp3File(string outputFile, List<string> sourceFiles)
         {
             try
@@ -243,11 +247,13 @@ namespace CatCode_Selenium
             }
 
         }
+
         static public string GetTableName_dsChuong(int idTruyen, string tbl = "tblTruyen_dsChuong_")
         {
             int tableIndex = idTruyen / 1000;
             return string.Format(tbl + "{0}", tableIndex);
         }
+
         static public bool DownloadImage(string imageUrl, string downloadPath)
         {
             DeleteFile(downloadPath);
@@ -275,6 +281,7 @@ namespace CatCode_Selenium
             {
             }
         }
+
         public static Stream GenerateStreamFromString(string s)
         {
             var stream = new MemoryStream();
@@ -322,7 +329,6 @@ namespace CatCode_Selenium
                     select (from DataColumn c in dt.Columns
                             select c.ColumnName).ToDictionary((string cName) => cName, (string cName) => dr[cName])).ToList();
         }
-
 
         public static Cloudinary GetCloudinary(ref int idCloudinary, int creditsLimit = 2, bool forceLimit = false)
         {
@@ -378,6 +384,7 @@ namespace CatCode_Selenium
             }
 
         }
+
         public static void UpdateCreditsUsage(Cloudinary cloudinary)
         {
             try
