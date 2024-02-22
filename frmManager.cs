@@ -251,6 +251,7 @@ namespace CatCode_Selenium
                     catch
                     {
                     }
+                    await Task.Delay(1000);
                 }
             }));
             #endregion
@@ -261,6 +262,9 @@ namespace CatCode_Selenium
         #region Truyện + Chương truyện
         private void mn_FullTruyen_Text_Click(object sender, EventArgs e)
         {
+            return;
+            // fake
+
             this.mn_MenuFullTruyenTranh.Enabled = false;
             this.menuFullTruyen.Enabled = false;
             this.Text = "[GET] ds truyện mới cập nhật";
@@ -302,6 +306,7 @@ namespace CatCode_Selenium
                         {
                             uFull.WriteLog("Exception: " + ex.Message);
                         }
+                        Task.Delay(1000);
                     }
                 }));
             }
@@ -313,6 +318,9 @@ namespace CatCode_Selenium
         #region  [TRUYỆN TRANH] Truyện + Chương truyện 
         private void mn_FullTruyen_Tranh_Click(object sender, EventArgs e)
         {
+            return;
+            // fake
+
             UTruyenFull uFull = new UTruyenFull()
             {
                 Name = "fullTruyen_TruyenTranhMoiCapNhat",
@@ -339,6 +347,8 @@ namespace CatCode_Selenium
                     {
                         uFull.WriteLog("Exception: " + ex.Message);
                     }
+
+                    Task.Delay(1000);
                 }
             }));
         }
