@@ -262,7 +262,7 @@ namespace CatCode_Selenium
         #region Truyện + Chương truyện
         private void mn_FullTruyen_Text_Click(object sender, EventArgs e)
         {
-            return;
+            //return;
             // fake
 
             this.mn_MenuFullTruyenTranh.Enabled = false;
@@ -318,7 +318,7 @@ namespace CatCode_Selenium
         #region  [TRUYỆN TRANH] Truyện + Chương truyện 
         private void mn_FullTruyen_Tranh_Click(object sender, EventArgs e)
         {
-            return;
+            //return;
             // fake
 
             UTruyenFull uFull = new UTruyenFull()
