@@ -23,28 +23,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace CatCode_Selenium
 {
-    public class Rootobject
-    {
-        public Parsedresult[] ParsedResults { get; set; }
-        public int OCRExitCode { get; set; }
-        public bool IsErroredOnProcessing { get; set; }
-        public string ErrorMessage { get; set; }
-        public string ErrorDetails { get; set; }
-    }
+   
 
-    public class Parsedresult
-    {
-        public object FileParseExitCode { get; set; }
-        public string ParsedText { get; set; }
-        public string ErrorMessage { get; set; }
-        public string ErrorDetails { get; set; }
-    }
     public partial class frmManager : Form
     {
         public frmManager()
         {
             InitializeComponent();
-            this.FormClosed += FrmManager_FormClosed;
+            this.FormClosed += frmManager_FormClosed;
             #region Visible Menu
             this.mnChonHinhAnh.Visible = false;
             this.speechtoTextToolStripMenuItem.Visible = false;
@@ -57,10 +43,10 @@ namespace CatCode_Selenium
             this.menuFullTruyen.Visible = false;
             this.fullTruyenToolStripMenuItem.Visible = false;
             #endregion
-            this.Shown += FrmManager_Shown;
+            this.Shown += frmManager_Shown;
         }
 
-        private void FrmManager_Shown(object sender, EventArgs e)
+        private void frmManager_Shown(object sender, EventArgs e)
         {
             mn_FullTruyen_Text_Click(null,null);
         }
@@ -70,7 +56,7 @@ namespace CatCode_Selenium
             this.Controls.Clear();
             this.Controls.Add(new UChonHinhAnh() { Dock = DockStyle.Fill });
         }
-        private void FrmManager_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (lstFullTruyen != null)
             {
@@ -469,5 +455,22 @@ namespace CatCode_Selenium
             }
             return false;
         }
+    }
+
+    public class Rootobject
+    {
+        public Parsedresult[] ParsedResults { get; set; }
+        public int OCRExitCode { get; set; }
+        public bool IsErroredOnProcessing { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ErrorDetails { get; set; }
+    }
+
+    public class Parsedresult
+    {
+        public object FileParseExitCode { get; set; }
+        public string ParsedText { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ErrorDetails { get; set; }
     }
 }

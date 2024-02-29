@@ -18,21 +18,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CatCode_Selenium
 {
-    public class GGDriveFolder
-    {
-        public string kind { set;get;}
-        public string incompleteSearch { set;get; }
-        public string nextPageToken { set;get; }
-        
-        public List<GGDriveFile> files { set;get; }
-    }
-    public class GGDriveFile
-    {
-        public string kind { set; get; }
-        public string mimeType { set; get; }
-        public string id { set; get; }
-        public string name { set; get; }
-    }
     public partial class Form1 : Form
     {
 
@@ -66,7 +51,7 @@ namespace CatCode_Selenium
             chromeDrivers = null;
         }
 
-        private async void Form1_Shown(object sender, EventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
            
         }
@@ -712,5 +697,21 @@ namespace CatCode_Selenium
                 }));
             }
         }
+    }
+
+    public class GGDriveFolder
+    {
+        public string kind { set; get; }
+        public string incompleteSearch { set; get; }
+        public string nextPageToken { set; get; }
+
+        public List<GGDriveFile> files { set; get; }
+    }
+    public class GGDriveFile
+    {
+        public string kind { set; get; }
+        public string mimeType { set; get; }
+        public string id { set; get; }
+        public string name { set; get; }
     }
 }

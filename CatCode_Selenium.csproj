@@ -500,6 +500,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MergeMp3File.resx">
       <DependentUpon>MergeMp3File.cs</DependentUpon>
